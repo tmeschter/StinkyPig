@@ -105,4 +105,12 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
         </ul>
     </div>
+    <div class="col-md-3">
+        <h2>Environment Variables</h2>
+        <ul>
+            <li>WEBSITE_AUTH_ENABLED: @Environment.GetEnvironmentVariable("WEBSITE_AUTH_ENABLED")</li>
+            <li>WEBSITE_AUTH_SIGNING_KEY: @Environment.GetEnvironmentVariable("WEBSITE_AUTH_SIGNING_KEY")</li>
+            <li>WEBSITE_AUTH_ALLOWED_AUDIENCES: @Environment.GetEnvironmentVariable("WEBSITE_AUTH_ALLOWED_AUDIENCES")</li>
+        </ul>
+    </div>
 </div>
