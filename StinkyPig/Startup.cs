@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication;
-using Middleware.Authentication.AppService;
+using AppServiceAuthentication;
 
 namespace StinkyPig
 {
@@ -31,6 +31,7 @@ namespace StinkyPig
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication().AddAppServiceAuth();
             // Add framework services.
             services.AddMvc();
         }
@@ -40,8 +41,6 @@ namespace StinkyPig
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
-            app.UseAzureAppServiceAuthentication();
 
             if (env.IsDevelopment())
             {
